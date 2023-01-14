@@ -18,5 +18,11 @@ export const useAnalytics = () => {
     Observer.subscribe(sendToGoogleAnalytics);
     Observer.subscribe(sendToCustomAnalytics);
     Observer.subscribe(sendToEmail);
+
+    return () => {
+      Observer.unsubscribe(sendToGoogleAnalytics);
+      Observer.unsubscribe(sendToCustomAnalytics);
+      Observer.unsubscribe(sendToEmail);
+    };
   }, []);
 };

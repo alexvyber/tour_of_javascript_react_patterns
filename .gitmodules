@@ -1,0 +1,3 @@
+[submodule "javascript-react-patterns"]
+	path = javascript-react-patterns
+	url = https://github.com/lydiahallie/javascript-react-patterns.git

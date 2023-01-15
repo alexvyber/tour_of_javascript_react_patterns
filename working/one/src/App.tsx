@@ -1,7 +1,16 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import { ObserverPattern } from "./patterns/observer";
+import { Component } from "./patterns/render-props-two";
+// import TemperatureConverter, {
+//   Fahrenheit,
+//   Kelvin,
+// } from "./patterns/render-props";
+// import { ObserverPattern } from "./patterns/observer";
+// import { ListingsContainerComponent } from "./patterns/container-presentation/container";
+// import ListingsContainerComponent from "./patterns/container-presentation/container";
+
+const Text = ({ children }: React.PropsWithChildren) => <h1>{children}</h1>;
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,7 +37,21 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <ObserverPattern />
+      {/* <ObserverPattern /> */}
+      {/* <ListingsContainerComponent /> */}
+      {/* <TemperatureConverter
+        renderKelvin={({ value }) => <Kelvin value={value} />}
+        renderFahrenheit={({ value }) => <Fahrenheit value={value} />}
+      /> */}
+      <Component>
+        {({ value, func }) => <h1 onClick={() => func(value)}>Some {value}</h1>}
+      </Component>
+      <Component>
+        <h1>Some</h1>
+      </Component>
+      <Component>
+        <Text>Some</Text>
+      </Component>
     </div>
   );
 }

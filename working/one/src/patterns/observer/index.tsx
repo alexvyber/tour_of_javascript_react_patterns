@@ -12,6 +12,7 @@ export const ObserverPattern = () => {
     <>
       <button onClick={() => click(111111)}>111</button>
       <button onClick={() => click(333333)}>333</button>
+      <button onClick={() => click("asdfasdfasdf asdf asdf asdf")}>more</button>
     </>
   );
 };
